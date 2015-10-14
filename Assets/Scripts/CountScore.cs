@@ -21,6 +21,12 @@ public class CountScore : MonoBehaviour {
         Debug.Log("Score: " + score);
 
     }
+
+    public int GetCurrentScore()
+    {
+        return score;
+    }
+
 	// Update is called once per frame
 	void Update () {
 	

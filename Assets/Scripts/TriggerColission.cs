@@ -13,11 +13,21 @@ public class TriggerColission : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Score")
+        var otherGameObject = other.gameObject;
+        switch (otherGameObject.tag)
         {
-            Debug.Log("Score!");
-            countScore.AddScore(cubeValue);
-            Destroy(other.gameObject);
+            case "Score":
+                Debug.Log("Score!");
+                countScore.AddScore(cubeValue);
+                Destroy(otherGameObject);
+                break;
+            case "Finish":
+                Debug.Log("Finished!");
+                Destroy(otherGameObject);
+                break;
+            default:
+                break;
+
         }
     }
 }
