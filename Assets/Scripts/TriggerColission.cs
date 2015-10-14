@@ -22,6 +22,7 @@ public class TriggerColission : MonoBehaviour
                 Destroy(otherGameObject);
                 break;
             case "Finish":
+                countScore.scoreText.text = "Finished!";
                 Debug.Log("Finished!");
                 Destroy(otherGameObject);
                 break;
